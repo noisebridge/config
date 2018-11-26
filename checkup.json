@@ -1,0 +1,52 @@
+{
+  "checkers": [
+    {
+      "type": "http",
+      "endpoint_name": "HTTP: Unicorn homepage (by <@elimisteve>)",
+      "endpoint_url": "https://noisebridge.info/",
+      "must_contain": "noisebridge"
+    },
+    {
+      "type": "tls",
+      "endpoint_name": "Unicorn homepage (TLS check) (by <@elimisteve>)",
+      "endpoint_url": "noisebridge.info:443"
+    },
+
+    {
+      "type": "http",
+      "endpoint_name": "HTTP: Effective.af instance for Noisebridge (by <@elimisteve>)",
+      "endpoint_url": "https://effective.noisebridge.info/",
+      "must_contain": "Unicorn"
+    },
+    {
+      "type": "tls",
+      "endpoint_name": "Effective.af instance (TLS check) (by <@elimisteve>)",
+      "endpoint_url": "effective.noisebridge.info:443"
+    },
+
+    {
+      "type": "http",
+      "endpoint_name": "HTTP: Wiki (notifying <@Rando>)",
+      "endpoint_url": "https://www.noisebridge.net/wiki/Noisebridge",
+      "must_contain": "<title>Noisebridge</title>"
+    },
+    {
+      "type": "tls",
+      "endpoint_name": "Wiki (TLS check) (notifying <@Rando>)",
+      "endpoint_url": "noisebridge.net:443"
+    }
+  ],
+
+  "storage": {
+    "provider": "fs",
+    "dir": "/home/noisebridge/status_checks",
+    "url": "https://status.noisebridge.info/checks"
+  },
+
+  "notifier": {
+    "name": "slack",
+    "username": "status-bot",
+    "channel": "#unicorn",
+    "webhook": "https://hooks.slack.com/services/SECRETS/GO/HERE"
+  }
+}
